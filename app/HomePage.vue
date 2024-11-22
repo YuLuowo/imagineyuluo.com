@@ -1,16 +1,25 @@
 <template>
     <h1>雨落 YuLuo</h1>
-    <div class="home-container"></div>
-    <div class="gradient"></div>
-    <div class="content">Hi</div>
+    <div class="home-container">
+        <div class="total-group">
+            <div class="left-group">
+                <ProfilePictureBox />
+            </div>
+            <div class="right-group">
+
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
+import ProfilePictureBox from "../components/ProfilePictureBox.vue";
 import {useSeoMeta} from '@vueuse/head'
 
 export default {
     name: "HomePage",
     components: {
+        ProfilePictureBox,
     },
     setup() {
         useSeoMeta({
@@ -28,42 +37,36 @@ h1 {
 
 .home-container {
     font-family: Avenir, Helvetica, Arial, sans-serif;
+    width: 100%;
     text-align: center;
     color: #000000;
     display: flex;
     justify-content: center;
-    background: transparent;
 }
 
-.gradient {
-    background: transparent linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
-    width: 100%;
-    position: absolute;
-    bottom: 40%;
-    left: 0;
-    height: 20%;
-    z-index: -100;
+.total-group {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
 }
 
-.content {
-    background: white;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 45%;
-    z-index: -100;
+.left-group {
+    width: 20%;
+    background-color: white;
+    border: 1px solid rgba(209, 217, 224, 0.7);
+    border-radius: 5px;
+    box-shadow: rgba(37, 41, 46, 0.12) 0px 3px 6px 0px;
+    margin: 10px 5px 10px 10px;
 }
 
-@media screen and (max-width: 640px) {
-    .content {
-        background: white;
-        width: 100%;
-        position: absolute;
-        bottom: -50%;
-        left: 0;
-        height: 90%;
-    }
+.right-group {
+    width: 80%;
+    background-color: white;
+    border: 1px solid rgba(209, 217, 224, 0.7);
+    border-radius: 5px;
+    box-shadow: rgba(37, 41, 46, 0.12) 0px 3px 6px 0px;
+    margin: 10px 10px 10px 5px;
 }
 
 </style>
