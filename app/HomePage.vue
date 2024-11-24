@@ -2,24 +2,25 @@
     <h1>雨落 YuLuo</h1>
     <div class="home-container">
         <div class="total-group">
-            <div class="left-group">
-                <ProfilePictureBox />
-            </div>
-            <div class="right-group">
+            hi qwqwq
+<!--            <div class="left-group">-->
+<!--                <ProfilePictureBox />-->
+<!--            </div>-->
+<!--            <div class="right-group">-->
 
-            </div>
+<!--            </div>-->
         </div>
     </div>
 </template>
 
 <script>
-import ProfilePictureBox from "../components/ProfilePictureBox.vue";
+// import ProfilePictureBox from "../components/ProfilePictureBox.vue";
 import {useSeoMeta} from '@vueuse/head'
 
 export default {
     name: "HomePage",
     components: {
-        ProfilePictureBox,
+        // ProfilePictureBox,
     },
     setup() {
         useSeoMeta({
