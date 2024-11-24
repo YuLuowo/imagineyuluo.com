@@ -4,7 +4,7 @@ module.exports = {
             entry: 'src/main.js',
             template: 'src/index.html',
             filename: 'index.html',
-            title: 'ImagineYuLuo',
+            title: 'YuLuo',
             chunks: ['chunk-vendors', 'chunk-common', 'index']
         }
     }
