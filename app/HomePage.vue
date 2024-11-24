@@ -84,8 +84,9 @@ export default {
 
 @media screen and (max-width: 768px) {
     .image {
-        height: 30%;
-        width: 30%;
+        min-width: 90%;
+        height: 650px;
+        background-position: center;
     }
 }
 
