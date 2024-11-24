@@ -10,7 +10,9 @@
 
             </div>
         </div>
+
     </div>
+
 </template>
 
 <script>
@@ -99,6 +101,7 @@ h1 {
         min-width: 200px;
         margin: 0 0 10px 0;
         padding: 0;
+        min-height: 100%;
     }
 }
 </style>
