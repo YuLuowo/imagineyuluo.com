@@ -1,73 +1,93 @@
 <template>
-    <h1>雨落 YuLuo</h1>
-    <div class="home-container">
-        <div class="total-group">
-            hi qwqwq
-<!--            <div class="left-group">-->
-<!--                <ProfilePictureBox />-->
-<!--            </div>-->
-<!--            <div class="right-group">-->
-
-<!--            </div>-->
-        </div>
+<div class="home-container">
+    <div class="title-container">
+        <h1>YuLuo</h1>
+        <h2>Hi !</h2>
     </div>
+    <div class="picture-container">
+        <div class="image"></div>
+    </div>
+</div>
 </template>
 
 <script>
-// import ProfilePictureBox from "../components/ProfilePictureBox.vue";
 import {useSeoMeta} from '@vueuse/head'
 
 export default {
     name: "HomePage",
     components: {
-        // ProfilePictureBox,
     },
     setup() {
         useSeoMeta({
-            title: 'ImagineYuLuo'
+            title: 'YuLuo'
         })
     }
 };
 </script>
 
 <style>
-
-h1 {
-    font-size: clamp(18px, 4vw, 32px);
-}
-
 .home-container {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    width: 100%;
-    text-align: center;
-    color: #000000;
-    display: flex;
-    justify-content: center;
-}
-
-.total-group {
-    width: 70%;
     display: flex;
     justify-content: space-between;
-    height: 200px;
+    height: 80vh;
 }
 
-.left-group {
-    width: 20%;
-    background-color: white;
-    border: 1px solid rgba(209, 217, 224, 0.7);
-    border-radius: 5px;
-    box-shadow: rgba(37, 41, 46, 0.12) 0px 3px 6px 0px;
-    margin: 10px 5px 10px 10px;
+.home-container h1 {
+    font-size: 64px;
+    margin: 15px;
 }
 
-.right-group {
-    width: 80%;
-    background-color: white;
-    border: 1px solid rgba(209, 217, 224, 0.7);
-    border-radius: 5px;
-    box-shadow: rgba(37, 41, 46, 0.12) 0px 3px 6px 0px;
-    margin: 10px 10px 10px 5px;
+.home-container h2 {
+    margin: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.title-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .title-container {
+        width: 100%;
+    }
+
+    .picture-container {
+        width: 100%;
+    }
+}
+
+.image {
+    background: url("../public/images/ElbeCasual.webp") no-repeat;
+    background-size: cover;
+    min-height: 650px;
+    min-width: 680px;
+    z-index: -9999;
+}
+
+@media screen and (max-width: 768px) {
+    .image {
+        height: 30%;
+        width: 30%;
+    }
+}
+
 
 </style>
