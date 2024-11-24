@@ -2,15 +2,13 @@
 </script>
 
 <template>
-<div class="picture-box">
-
-</div>
+<div class="picture-box"></div>
 </template>
 
 <style scoped>
 .picture-box {
-    width: 150px;
-    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
     background: url("../public/images/profile_picture.jpg");
     background-size: cover;
     border-radius: 50%;
