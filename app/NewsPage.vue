@@ -14,7 +14,7 @@ export default {
     },
     setup() {
         useSeoMeta({
-            title: 'ImagineYuLuo'
+            title: 'YuLuo'
         })
     }
 };
