@@ -1,7 +1,7 @@
 <template>
     <div class="app-container">
         <NavigationBar/>
-        <router-view />
+        <router-view/>
     </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
 
 <style>
 .app-container {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     text-align: center
 }
 
