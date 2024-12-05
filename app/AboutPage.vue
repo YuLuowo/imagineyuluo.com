@@ -1,5 +1,5 @@
 <template>
-    <h1>About Page</h1>
+    <h1>About</h1>
     <div class="about-container">
         <div class="total-group">
             <div class="left-group">
@@ -7,7 +7,12 @@
                 <ProfileContent />
             </div>
             <div class="right-group">
-
+                <div class="skills-container">
+                    <p>Skills</p>
+                </div>
+                <div class="games-container">
+                    <p>Games</p>
+                </div>
             </div>
         </div>
 
@@ -93,6 +98,8 @@ h1 {
     margin: 10px 10px 10px 5px;
     padding: 10px;
     min-height: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -104,4 +111,24 @@ h1 {
         min-height: 100%;
     }
 }
+
+.skills-container {
+    display: flex;
+    justify-content: left;
+    height: 50%;
+    padding: 10px;
+}
+
+.games-container {
+    display: flex;
+    justify-content: left;
+    height: 50%;
+    padding: 10px;
+}
+
+.skills-container p, .games-container p {
+    font-size: 30px;
+    margin: 0;
+}
+
 </style>
