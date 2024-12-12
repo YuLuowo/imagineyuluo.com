@@ -2,14 +2,21 @@
     <h1>News</h1>
     <div class="news-container">
         <div class="group-box">
-            <SearchNews/>
-            <NewsGroup />
+            <SearchNews v-model="searchKeyword" />
+            <div v-if="loading" class="loading-spinner"></div>
+            <NewsGroup :news="filteredNews" />
+            <div v-if="!loading && filteredNews.length === 0">
+                <div class="not-found-container">
+                    <p class="not-found-text">Not Found</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import {useSeoMeta} from '@vueuse/head'
+import { ref, computed, onMounted } from 'vue';
+import { useSeoMeta } from '@vueuse/head';
 import NewsGroup from "../components/NewsGroup.vue";
 import SearchNews from "../components/SearchNews.vue";
 
@@ -22,8 +29,50 @@ export default {
     setup() {
         useSeoMeta({
             title: 'YuLuo'
-        })
-    }
+        });
+
+        const news = ref([]);
+        const searchKeyword = ref('');
+        const loading = ref(false);
+
+        async function fetchNews() {
+            loading.value = true;
+            try {
+                const response = await fetch(
+                    "https://raw.githubusercontent.com/YuLuowo/imagineyuluo.com/refs/heads/main/data/news.json"
+                );
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const rawData = await response.json();
+
+                news.value = rawData.map(item => ({
+                    ...item,
+                    created_date: item.created_date.split("T")[0]
+                }));
+            } catch (error) {
+                console.error("Fetch Error:", error);
+            } finally {
+                loading.value = false;
+            }
+        }
+
+        const filteredNews = computed(() => {
+            if (!searchKeyword.value) return news.value;
+            return news.value.filter(item =>
+                item.title.toLowerCase().includes(searchKeyword.value.toLowerCase())
+            );
+        });
+
+        onMounted(() => {
+            fetchNews();
+        });
+
+        return {
+            news,
+            searchKeyword,
+            filteredNews,
+            loading,
+        };
+    },
 };
 </script>
 
@@ -44,6 +93,19 @@ export default {
     box-shadow: rgba(37, 41, 46, 0.12) 0px 3px 6px 0px;
     padding: 20px;
     margin: 30px;
+}
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(209, 217, 224, 0.7);
+    margin-top: 10px;
+}
+
+.not-found-text {
+    color: red;
+    margin: 10px;
 }
 
 @media screen and (max-width: 768px) {
