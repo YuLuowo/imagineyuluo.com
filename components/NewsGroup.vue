@@ -27,14 +27,19 @@ function toggleContent(id) {
 <template>
     <div class="group" v-for="item in news" :key="item.id">
         <div class="news-group" :id="item.id" @click="toggleContent(item.id)">
-            <div class="news-group-header">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.created_date }}</p>
+            <div class="group-picture">
+
             </div>
-            <div class="news-group-bottom">
+            <div class="news-group-total">
+                <div class="news-group-header">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.created_date }}</p>
+                </div>
+                <div class="news-group-bottom">
                 <span class="arrow" :ref="el => (refs.arrow[item.id] = el)">
                     <i class="fa fa-chevron-right"></i>
                 </span>
+                </div>
             </div>
         </div>
         <div class="content" :ref="el => (refs.content[item.id] = el)">
@@ -51,12 +56,49 @@ function toggleContent(id) {
 .news-group {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(209, 217, 224, 0.7);
+}
+
+.news-group:hover {
+    cursor: pointer;
+}
+
+.group-picture {
+    width: 30%;
+    background: url("../public/images/news.jpeg");
+    background-size: cover;
+    background-position: left center;
+    min-width: 170px;
+    min-height: 90px;
+}
+
+.news-group-total {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9);
+
     padding: 10px;
 }
 
-.news-group h3, .news-group p {
+@media screen and (max-width: 768px) {
+    .news-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .group-picture {
+        width: 100%;
+        background-position: left center;
+    }
+
+    .news-group-total {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.news-group-total h3, .news-group-total p {
     margin: 0;
 }
 
