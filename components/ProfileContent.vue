@@ -4,7 +4,7 @@
 <template>
 <div class="profile-content">
     <h3>YuLuo</h3>
-    <p>qwqwqwq</p>
+    <p>Hi</p>
     <div class="wrapper">
         <div class="icon github">
             <div class="tooltip">
