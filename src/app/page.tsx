@@ -23,7 +23,7 @@ export default function HomePage() {
                     <div className="px-2">
                         <h3 className="text-4xl font-bold mb-4">About Me</h3>
                         <p className="text-gray-300 text-lg leading-relaxed">
-                            Hi, I'm <span className="text-blue-400 font-semibold">YuLuo</span>.
+                            Hi, Im <span className="text-blue-400 font-semibold">YuLuo</span>.
                         </p>
                     </div>
                     <SocialMedia />
