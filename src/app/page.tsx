@@ -88,29 +88,29 @@ export default function HomePage() {
                     <div className="flex flex-col my-3 gap-6">
                         <h4 className="text-2xl font-semibold">Languages</h4>
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                            <Card imageSrc="https://www.svgrepo.com/show/452184/csharp.svg" title="CSharp" />
-                            <Card imageSrc="https://www.svgrepo.com/show/349330/css3.svg" title="CSS" />
-                            <Card imageSrc="https://www.svgrepo.com/show/452228/html-5.svg" title="HTML" />
-                            <Card imageSrc="https://www.svgrepo.com/show/452234/java.svg" title="Java" />
-                            <Card imageSrc="https://www.svgrepo.com/show/349419/javascript.svg" title="JavaScript" />
-                            <Card imageSrc="https://www.svgrepo.com/show/353980/kotlin.svg" title="Kotlin" />
-                            <Card imageSrc="https://www.svgrepo.com/show/452091/python.svg" title="Python" />
-                            <Card imageSrc="https://www.svgrepo.com/show/373966/php.svg" title="PHP" />
-                            <Card imageSrc="https://www.svgrepo.com/show/349540/typescript.svg" title="TypeScript" />
+                            <Card imageSrc="/icon/csharp.svg" title="CSharp" />
+                            <Card imageSrc="/icon/css3.svg" title="CSS" />
+                            <Card imageSrc="/icon/html-5.svg" title="HTML" />
+                            <Card imageSrc="/icon/java.svg" title="Java" />
+                            <Card imageSrc="/icon/javascript.svg" title="JavaScript" />
+                            <Card imageSrc="/icon/kotlin.svg" title="Kotlin" />
+                            <Card imageSrc="/icon/python.svg" title="Python" />
+                            <Card imageSrc="/icon/php.svg" title="PHP" />
+                            <Card imageSrc="/icon/typescript.svg" title="TypeScript" />
                         </div>
                     </div>
 
                     <div className="flex flex-col my-3 gap-6">
                         <h4 className="text-2xl font-semibold">Frameworks</h4>
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                            <Card imageSrc="https://www.svgrepo.com/show/373442/asp.svg" title="ASP.NET" />
-                            <Card imageSrc="https://www.svgrepo.com/show/353498/bootstrap.svg" title="Bootstrap" />
-                            <Card imageSrc="https://www.svgrepo.com/show/376332/laravel.svg" title="Laravel" />
-                            <Card imageSrc="https://www.svgrepo.com/show/306466/next-dot-js.svg" title="Next.js" className="bg-white rounded-full" />
-                            <Card imageSrc="https://www.svgrepo.com/show/452075/node-js.svg" title="Node.js" />
-                            <Card imageSrc="https://www.svgrepo.com/show/452092/react.svg" title="React" />
-                            <Card imageSrc="https://www.svgrepo.com/show/374118/tailwind.svg" title="TailwindCSS" />
-                            <Card imageSrc="https://www.svgrepo.com/show/452130/vue.svg" title="Vue.js" />
+                            <Card imageSrc="/icon/asp.svg" title="ASP.NET" />
+                            <Card imageSrc="/icon/bootstrap.svg" title="Bootstrap" />
+                            <Card imageSrc="/icon/laravel.svg" title="Laravel" />
+                            <Card imageSrc="/icon/next-dot-js.svg" title="Next.js" className="bg-white rounded-full" />
+                            <Card imageSrc="/icon/node-js.svg" title="Node.js" />
+                            <Card imageSrc="/icon/react.svg" title="React" />
+                            <Card imageSrc="/icon/tailwind.svg" title="TailwindCSS" />
+                            <Card imageSrc="/icon/vue.svg" title="Vue.js" />
                         </div>
                     </div>
                 </motion.div>
