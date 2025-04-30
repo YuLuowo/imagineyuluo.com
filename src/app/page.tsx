@@ -45,7 +45,7 @@ export default function HomePage() {
                                 I&#39;m currently learning more about full-stack development and how to design user experiences.
                             </div>
                             <div className="mb-6">
-                                <span>Also, I've built some stuff, like:</span>
+                                <span>Also, I&#39;ve built some stuff, like:</span>
                                 <ul className="list-disc list-inside space-y-2 mt-2 text-blue-300 text-base">
                                     <li>
                                         <a href="https://github.com/YuLuowo/Azurlane" target="_blank" rel="noopener noreferrer" className="hover:underline">
