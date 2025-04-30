@@ -39,11 +39,11 @@ export default function HomePage() {
                     <h2 className="text-4xl font-semibold mb-4">About Me</h2>
                     <div className="flex flex-col md:flex-row justify-center gap-6">
                         <div className="flex flex-col gap-6 text-lg">
-                            <span>
-                                Hello I'm YuLuo, a student who is passionate about web development and programming.
+                            <div>
+                                Hello I&#39;m <span className="text-blue-400 font-semibold">YuLuo</span>, a student who is passionate about web development and programming.
                                 I love building responsive and interactive websites, and enjoy working with modern web technologies like React, Next.js, and Tailwind CSS.
-                                I'm currently learning more about full-stack development and how to design user experiences.
-                            </span>
+                                I&#39;m currently learning more about full-stack development and how to design user experiences.
+                            </div>
                             <div className="mb-6">
                                 <span>Also, I've built some stuff, like:</span>
                                 <ul className="list-disc list-inside space-y-2 mt-2 text-blue-300 text-base">
