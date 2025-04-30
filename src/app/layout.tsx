@@ -4,7 +4,7 @@ import React from "react";
 
 
 export const metadata: Metadata = {
-    title: "ImagineYuLuo",
+    title: "YuLuowo",
     description: "Hi",
 };
 
