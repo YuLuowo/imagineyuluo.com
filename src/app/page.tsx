@@ -26,7 +26,7 @@ export default function HomePage() {
 
                     <div className="order-2 md:order-1 mx-16">
                         <h1 className="text-6xl font-bold mb-6">YuLuo</h1>
-                        <p className="text-2xl">Welcome to my website :D</p>
+                        <p className="text-xl md:text-2xl">Welcome to my website :D</p>
                     </div>
                 </motion.div>
                 <motion.div
