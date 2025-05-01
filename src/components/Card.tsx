@@ -12,7 +12,7 @@ export default function Card({ imageSrc, title, className }: CardProps) {
                 alt={`${title} logo`}
                 className={`w-8 h-8 ${className} `}
             />
-            <span className="text-lg font-semibold">{title}</span>
+            <span className="text-base md:text-lg font-semibold">{title}</span>
         </div>
     );
 }
