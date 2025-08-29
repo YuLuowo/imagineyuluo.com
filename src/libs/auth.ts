@@ -1,5 +1,12 @@
 import {NextAuthOptions} from "next-auth";
-import DiscordProvider, {DiscordProfile} from "next-auth/providers/discord";
+import DiscordProvider from "next-auth/providers/discord";
+
+interface DiscordProfile {
+    id: string;
+    username: string;
+    avatar: string | null;
+    discriminator: string;
+}
 
 export const authOptions: NextAuthOptions = {
     providers: [
