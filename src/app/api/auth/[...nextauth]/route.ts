@@ -1,12 +1,5 @@
-import NextAuth, {DefaultSession, NextAuthOptions} from "next-auth";
+import NextAuth, {DefaultSession} from "next-auth";
 import {authOptions} from "@/libs/auth";
-
-interface DiscordProfile {
-    id: string;
-    username: string;
-    avatar: string | null;
-    discriminator: string;
-}
 
 declare module "next-auth" {
     interface Session {
