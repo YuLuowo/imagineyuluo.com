@@ -37,15 +37,6 @@ export default function CommentList({fetchTrigger}: { fetchTrigger?: number }) {
         fetchComments();
     }, [fetchTrigger]);
 
-    const handleDelete = async (id: string) => {
-        if (!confirm("Are you sure you want to delete this comment?")) return;
-        const res = await fetch(`/api/comments/${id}`, {method: "DELETE"});
-        if (res.ok) {
-            setComments((prev) => prev.filter((c) => c._id !== id));
-        } else {
-            alert("Failed to delete");
-        }
-    };
 
     if (loading) return <div>Loading comments...</div>;
 
