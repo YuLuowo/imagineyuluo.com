@@ -2,7 +2,8 @@ import {NextRequest, NextResponse} from "next/server";
 import { connectDB } from "@/libs/mongodb";
 import Comment from "@/models/Comment";
 import { getServerSession } from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+import {authOptions} from "@/libs/auth";
+
 
 export async function DELETE(request: NextRequest, context: { params: Promise<{ id: string }> }) {
     const { id } = await context.params;

@@ -1,0 +1,35 @@
+import {NextAuthOptions} from "next-auth";
+import DiscordProvider, {DiscordProfile} from "next-auth/providers/discord";
+
+export const authOptions: NextAuthOptions = {
+    providers: [
+        DiscordProvider({
+            clientId: process.env.DISCORD_CLIENT_ID!,
+            clientSecret: process.env.DISCORD_CLIENT_SECRET!,
+        }),
+    ],
+    callbacks: {
+        async jwt({ token, account, profile }) {
+            if (account && profile) {
+                const discordProfile = profile as DiscordProfile;
+
+                token.discordId = discordProfile.id;
+                token.avatar = discordProfile.avatar;
+                token.username = discordProfile.username;
+            }
+            return token;
+        },
+        async session({ session, token }) {
+            if (session.user) {
+                session.user.discordId = token.discordId as string;
+                session.user.avatar = token.avatar
+                    ? `https://cdn.discordapp.com/avatars/${token.discordId}/${token.avatar}.png`
+                    : `https://cdn.discordapp.com/embed/avatars/${Math.floor(
+                        Math.random() * 5
+                    )}.png`;
+                session.user.name = token.username as string;
+            }
+            return session;
+        },
+    },
+};

@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
 import Comment from "@/models/Comment";
 import { connectDB } from "@/libs/mongodb";
 import { NextResponse } from "next/server";
+import {authOptions} from "@/libs/auth";
 
 export async function GET() {
     await connectDB();
