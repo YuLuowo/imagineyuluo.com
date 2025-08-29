@@ -6,7 +6,7 @@ interface CardProps {
 
 export default function Card({ imageSrc, title, className }: CardProps) {
     return (
-        <div className="flex gap-6 bg-black/10 backdrop-blur-sm border border-gray-800 rounded-lg p-3 hover:cursor-pointer hover:bg-white/5">
+        <div className="flex items-center gap-6 bg-black/10 backdrop-blur-sm border border-gray-800 rounded-lg p-3 hover:cursor-pointer hover:bg-white/5">
             <img
                 src={imageSrc}
                 alt={`${title} logo`}
