@@ -1,6 +1,7 @@
 "use client";
 import {useState} from "react";
-import {signIn, useSession} from "next-auth/react";
+import {signIn, signOut, useSession} from "next-auth/react";
+import {FaDiscord} from "react-icons/fa";
 
 type CommentBoxProps = {
     maxLength?: number;
@@ -61,20 +62,29 @@ export default function CommentBox({
                         <div className="h-9 w-9 rounded-full bg-gray-700"/>
                     )}
                     <div className="flex flex-col">
-            <span className="text-sm font-medium text-gray-100">
-              {session?.user?.name ?? (isSignedIn ? "Logged in" : "Guest")}
-            </span>
+                        <span className="text-sm font-medium text-gray-100">
+                          {session?.user?.name ?? (isSignedIn ? "Logged in" : "Guest")}
+                        </span>
                         <span className="text-xs text-gray-400">Leave a comment</span>
                     </div>
                 </div>
 
-                {!isSignedIn && (
+                {!isSignedIn ? (
                     <button
                         type="button"
                         onClick={() => signIn("discord", {callbackUrl: window.location.href})}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-indigo-800 bg-indigo-900/30 hover:bg-indigo-900/50 text-indigo-300 text-sm"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-indigo-800 bg-indigo-900/30 hover:bg-indigo-900/50 text-indigo-300 text-sm cursor-pointer"
                     >
+                        <FaDiscord className="w-5 h-5 hidden md:block" />
                         Sign in with Discord
+                    </button>
+                ) : (
+                    <button
+                        type="button"
+                        onClick={() => signOut({ callbackUrl: "/" })}
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-red-800 bg-red-900/30 hover:bg-red-900/50 text-red-300 text-sm cursor-pointer"
+                    >
+                        Sign out
                     </button>
                 )}
             </div>

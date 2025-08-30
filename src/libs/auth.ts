@@ -28,12 +28,16 @@ export const authOptions: NextAuthOptions = {
         },
         async session({ session, token }) {
             if (session.user) {
-                session.user.discordId = token.discordId as string;
-                session.user.avatar = token.avatar
-                    ? `https://cdn.discordapp.com/avatars/${token.discordId}/${token.avatar}.png`
-                    : `https://cdn.discordapp.com/embed/avatars/${Math.floor(
+                if (token.avatar) {
+                    const isGif = (token.avatar as string).startsWith("a_"); // Check if gif qwq! (a mean animation)
+                    session.user.avatar = `https://cdn.discordapp.com/avatars/${token.discordId}/${token.avatar}.${isGif ? "gif" : "png"}`;
+                } else {
+                    session.user.avatar = `https://cdn.discordapp.com/embed/avatars/${Math.floor(
                         Math.random() * 5
                     )}.png`;
+                }
+
+                session.user.discordId = token.discordId as string;
                 session.user.name = token.username as string;
             }
             return session;
